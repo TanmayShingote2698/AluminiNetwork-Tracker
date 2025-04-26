@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University DYPCOEI Network Analytics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #2c3e50;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            color: #3498db;
+        }
+
+        .visualization {
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        .export {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        a {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>DYPCOEI Alumni Network Analytics</h1>
+
+    <h2>Gender Distribution</h2>
+    <div class="visualization">
+        <img src="{{ url_for('static', filename='gender_distribution.png') }}" alt="Gender Distribution">
+    </div>
+
+    <h2>Graduation Year Distribution</h2>
+    <div class="visualization">
+        <iframe src="{{ url_for('static', filename='graduation_year_distribution.html') }}" frameborder="0"></iframe>
+    </div>
+
+    <h2>Career Path Distribution</h2>
+    <div class="visualization">
+        <iframe src="{{ url_for('static', filename='career_path_distribution.html') }}" frameborder="0"></iframe>
+    </div>
+
+    <h2>Top Employers</h2>
+    <div class="visualization">
+        <iframe src="{{ url_for('static', filename='top_employers_distribution.html') }}" frameborder="0"></iframe>
+    </div>
+
+    <h2>Geographical Distribution</h2>
+    <div class="visualization">
+        <iframe src="{{ url_for('static', filename='geographical_distribution_map.html') }}" frameborder="0"></iframe>
+    </div>
+
+    <div class="export">
+        <h2>Export Analytics</h2>
+        <a href="/export" target="_blank">Export Data as CSV</a>
+    </div>
+</body>
+
+</html>

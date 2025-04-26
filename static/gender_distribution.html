@@ -1,0 +1,6 @@
+def generate_gender_distribution():
+gender_counts = df['gender'].value_counts() # count occurrences of each gender
+fig = px.pie(names=gender_counts.index, values=gender_counts.values, title="Gender Distribution")
+gender_file_path = 'static/gender_distribution.png'
+fig.write_image(gender_file_path) # save as PNG image
+return gender_file_path
